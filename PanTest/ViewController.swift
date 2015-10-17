@@ -43,6 +43,8 @@ class ViewController: UIViewController {
             }else if inButton && !self.button.frame.contains(p) {
                 inButton = !inButton
                 
+            } else if sender.state == .Ended {
+                print("\n\nPressing is finished!!!!!!!\n")
             }
         }
     }
