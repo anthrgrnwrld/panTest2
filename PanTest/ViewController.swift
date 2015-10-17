@@ -30,7 +30,6 @@ class ViewController: UIViewController {
     }
     
     func didPan(sender: AnyObject) {
-        println("a")
 
         if let pan = sender as? UIPanGestureRecognizer {
 
@@ -40,10 +39,26 @@ class ViewController: UIViewController {
                 count++
                 inButton = !inButton
                 self.label.text = "\(count)"
+                //
             }else if inButton && !self.button.frame.contains(p) {
                 inButton = !inButton
+                
             }
         }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("\(__FUNCTION__) is called")
+    }
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        print("\(__FUNCTION__) is called")
+
+    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        print("\(__FUNCTION__) is called")
+
     }
 
 }
